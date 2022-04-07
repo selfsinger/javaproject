@@ -51,14 +51,7 @@ public class IplTeamImplementationDAO extends IplTeamDAO {
 	}
 
 	public void saveMultiple(IplDTO dto1, IplDTO dto2) {
-//		if(dto1!=null && dto2!=null)
-//		{
-//			System.out.println("its not null");
-//		}
-//		else {
-//			System.out.println("its null,we cant add");
-//		}
-
+//		
 	}
 
 	public void updateSponsorByName(String name, String sponsor) {
