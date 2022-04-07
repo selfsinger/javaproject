@@ -1,19 +1,22 @@
-package com.xworkz.abstractdto.dto;
+package com.xworkz.abstractdto;
+
+import com.xworkz.abstractdto.dao.IplTeamImplementationDAO;
+import com.xworkz.abstractdto.dto.IplTeamDTO;
 
 public class IplTeamTester {
 
 	public static void main(String[] args) {
-		IplTeamDTO dto = new IplTeamDTO();
+		IplTeamDTO dto1 = new IplTeamDTO();
 		// DTO
-		dto.setId("@royalchallengersbangalors");
-		dto.setName("Royal Challengers Bangalore");
-		dto.setSponser("Muthoot FinCorp");
-		dto.setCaptain("Virat kohli");
-		dto.setNoOfWins(98);
-		dto.setNoOfLostMatch(106);
+		dto1.setId("@royalchallengersbangalors");
+		dto1.setName("Royal Challengers Bangalore");
+		dto1.setSponser("Muthoot FinCorp");
+		dto1.setCaptain("Virat kohli");
+		dto1.setNoOfWins(98);
+		dto1.setNoOfLostMatch(106);
 		// DAO
 		IplTeamImplementationDAO dao = new IplTeamImplementationDAO();
-		dao.save(dto);
+		dao.save(dto1);
 
 		System.out.println();
 		IplTeamDTO dto2 = new IplTeamDTO();
@@ -143,16 +146,33 @@ public class IplTeamTester {
 		dto14.setCaptain("Mahela JayaWardene");
 		dto14.setNoOfWins(30);
 		dto14.setNoOfLostMatch(40);
-		dao.save(dto14);
+		dao.save(dto14);		
 
 		System.out.println();
 		dao.display();
 
 		System.out.println();
-		dao.findByName("Royal Challengers Bangalore");
+		System.out.println(dao.findByName("Royal Challengers Bangalore"));
+
 		System.out.println();
-		dao.updateNameById("royalchallengersbangalors", "RCB");
-		dao.display();
+		System.out.println(dao.findByNameAndSponsor("Pune Warriors India", "TVS Motors"));
+
+		System.out.println();
+		System.out.println(dao.findByNameAndSponsorAndCaptain("Kochi Tuskers Kerala", "Federal Bank", "Mahela JayaWardene"));
+
+		System.out.println();
+		System.out.println("Total ipl teams we have rt now :" + dao.total());
+		
+		System.out.println();
+		//dao.saveMultiple(null,null);
+		System.out.println();
+		dao.updateSponsorByName("Delhi Capitals", "Ather");
+
+		System.out.println();
+		dao.updateCaptainByName("MS Dhoni", "Chennai Super Kings");
+
+		System.out.println();
+		// System.out.println(dto1.toString()+" \n"+dto2.toString());
 
 	}
 }

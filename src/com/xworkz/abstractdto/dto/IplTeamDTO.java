@@ -41,5 +41,11 @@ public class IplTeamDTO {
 	public void setNoOfLostMatch(int noOfLostMatch) {
 		this.noOfLostMatch = noOfLostMatch;
 	}
+	@Override
+	public String toString() {
+		return "IplTeamDTO [id=" + id + ", name=" + name + ", sponser=" + sponser + ", captain=" + captain
+				+ ", noOfWins=" + noOfWins + ", noOfLostMatch=" + noOfLostMatch + "]";
+	}
+	
 	
 }
